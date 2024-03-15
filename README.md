@@ -42,7 +42,10 @@ Ini adalah aplikasi [nama aplikasi] yang bertujuan untuk [tujuan aplikasi].
     php artisan l5-swagger:generate
     ```
     kemudian akses ke http://localhost:8000/api/documentation
-
+11. Untuk menjalankan unit test anda dapat melakukan perintah berikut:
+    ```bash
+    .\vendor\bin\phpunit
+    ```
 ## Menjalankan Aplikasi
 
 Untuk menjalankan aplikasi, jalankan server lokal menggunakan perintah berikut:
