@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/approvers',[ApproverController::class,'store'])->name('approvers.store');
+Route::post('/status',[ApprovalStageController::class,'storeStatus'])->name('approval.store-status');
 Route::prefix('approval-stages')->name('approval-stages.')->group(function(){
     Route::get('/', [ApprovalStageController::class, 'index'])->name('index');
     Route::post('/', [ApprovalStageController::class, 'store'])->name('store');

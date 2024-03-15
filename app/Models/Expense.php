@@ -9,6 +9,8 @@ class Expense extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['amount','status_id'];
+
     public function status()
     {
         return $this->belongsTo(Status::class);
