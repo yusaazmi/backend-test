@@ -110,7 +110,34 @@ class ApprovalStageController extends Controller
             return ResponseUtil::errorResponse($e->getMessage(),422);
         }
     }
-
+    /**
+     * @OA\Post(
+     *     path="/status",
+     *     operationId="Create Status",
+     *     tags={"Status"},
+     *     summary="Create a new Status",
+     *     description="Membuat data Status",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Status data",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="name", type="string", example="menunggu persetujuan"),
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Status created successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="id", type="integer",default=1),
+     *             @OA\Property(property="name", type="string",default="menunggu persetujuan"),
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error"
+     *     )
+     * )
+     */
     public function storeStatus(Request $request)
     {
         try{
