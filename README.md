@@ -29,7 +29,7 @@ Ini adalah aplikasi [nama aplikasi] yang bertujuan untuk [tujuan aplikasi].
 8. Jalankan migrasi untuk membuat tabel basis data:
 
     ```bash
-    php artisan migrate
+    php artisan migrate:fresh
     ```
 
 9. (Opsional) Jalankan seeder untuk mengisi data awal ke dalam basis data:
@@ -37,6 +37,11 @@ Ini adalah aplikasi [nama aplikasi] yang bertujuan untuk [tujuan aplikasi].
     ```bash
     php artisan db:seed
     ```
+10. Untuk menjalankan swagger anda dapat melakukan perintah berikut:
+    ```bash
+    php artisan l5-swagger:generate
+    ```
+    kemudian akses ke http://localhost:8000/api/documentation
 
 ## Menjalankan Aplikasi
 
