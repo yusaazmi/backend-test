@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\ApprovalStageRequest;
 use App\Models\ApprovalStage;
+use App\Models\Status;
 use App\Util\ResponseUtil;
 
 
@@ -105,6 +106,19 @@ class ApprovalStageController extends Controller
             $approvalStage->save();
 
             return ResponseUtil::noticeResponse('success',200,$approvalStage);
+        }catch(\Exception $e){
+            return ResponseUtil::errorResponse($e->getMessage(),422);
+        }
+    }
+
+    public function storeStatus(Request $request)
+    {
+        try{
+            $status = new Status;
+            $status->name = $request->name;
+            $status->save();
+
+            return ResponseUtil::noticeResponse('success',200,$status);
         }catch(\Exception $e){
             return ResponseUtil::errorResponse($e->getMessage(),422);
         }
