@@ -1,6 +1,6 @@
 # Panduan Penggunaan
 
-Ini adalah aplikasi [nama aplikasi] yang bertujuan untuk [tujuan aplikasi].
+Ini adalah aplikasi backend test pekerjaan.
 
 ## Instalasi
 
